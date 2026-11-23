@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block title %}MailStudio Pro{% endblock %}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}"></head>
+<body><div class="app-shell"><aside class="sidebar"><a class="brand" href="/"><span class="brand-mark">M</span><span>mailstudio<small>CAMPAIGN WORKSPACE</small></span></a>
+<div class="nav-label">WORKSPACE</div><nav class="nav">
+<a href="/">▦ <span>Overview</span></a><a href="/builder">✦ <span>Email builder</span><em>NEW</em></a><a href="/templates">▤ <span>Template library</span></a><a href="/campaigns">◷ <span>Campaigns</span></a><a href="/send-html">✉ <span>Send HTML email</span></a>
+<div class="nav-label">AUDIENCE</div><a href="/contacts">♙ <span>Contacts & segments</span></a><a href="/ab-testing">⌁ <span>A/B experiments</span></a>
+<div class="nav-label">INSIGHTS</div><a href="/reports">▥ <span>Reports & analytics</span></a>  <a href="{{ url_for('brevo_settings') }}">Brevo SMTP</a>
+</nav>
+<div class="sidebar-bottom"><div class="avatar">NT</div><div><b>Portfolio workspace</b><small>Local demo environment</small></div></div></aside>
+<main class="main"><header class="topbar"><div><span class="live-dot"></span> Workspace <span class="crumb">/ Email marketing</span></div><div class="top-actions"><span class="top-pill">DEMO MODE</span><span class="top-avatar">NT</span></div></header>
+<section class="page">{% with messages=get_flashed_messages() %}{% if messages %}{% for m in messages %}<div class="flash">✓ &nbsp;{{m}}</div>{% endfor %}{% endif %}{% endwith %}{% block content %}{% endblock %}
+<footer>MAILSTUDIO PRO <span>•</span> Independent portfolio project <span>•</span> Local development mode</footer></section></main></div></body></html>
