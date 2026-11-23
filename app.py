@@ -258,7 +258,11 @@ def send_html_email():
     return render_template("send_html.html")
 
 @app.route("/health")
-def health(): return jsonify({"status":"ok","app":"Email Developer Suite","mode":"local demo"})
+def health():
+    return jsonify({"status":"ok","app":"Email Developer Suite","mode":"local demo"})
+
+
+init_db()
 
 if __name__ == "__main__":
     init_db()
