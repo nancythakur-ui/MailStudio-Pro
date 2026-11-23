@@ -1,0 +1,13 @@
+{% extends "base.html" %}{% block content %}
+<div class="page-head"><div><div class="eyebrow">BREVO • REAL DELIVERY</div><h1>Send an HTML email</h1><p class="sub">Choose a responsive email template and send it through your connected Brevo SMTP account.</p></div></div>
+<div class="send-html-grid">
+<section class="builder-panel"><h2>Campaign details</h2><form method="post" class="send-html-form">
+<label>Recipient email</label><input type="email" name="recipient" placeholder="your-email@example.com" required>
+<label>Email subject</label><input name="subject" placeholder="Welcome to StreamPlus" required>
+<label>HTML template</label><select name="template"><option value="welcome">Welcome email</option><option value="promotion">Promotion email</option><option value="newsletter">Newsletter</option></select>
+<label>Personalized name</label><input name="name" value="Nancy" placeholder="First name">
+<label>Offer text (used in Promotion template)</label><input name="offer" value="25% OFF">
+<button class="btn" type="submit">Send real HTML email ↗</button>
+</form><p class="muted" style="font-size:12px;margin-top:15px">Start by sending only to your own inbox. Only send to recipients who have given permission.</p></section>
+<section class="builder-panel"><h2>Included email templates</h2><div class="template-mini"><b>Welcome</b><p>Responsive welcome message with a personalized greeting and CTA.</p></div><div class="template-mini"><b>Promotion</b><p>Offer-focused layout with editable offer text and CTA.</p></div><div class="template-mini"><b>Newsletter</b><p>Editorial newsletter layout for updates and content highlights.</p></div><div class="section"><b>Sending setup</b><p class="muted" style="font-size:13px">Uses your saved Brevo SMTP credentials, TLS encryption, and multipart email (plain-text fallback + HTML body).</p><a href="/brevo">Open Brevo SMTP settings →</a></div></section>
+</div>{% endblock %}
