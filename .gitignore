@@ -1,0 +1,20 @@
+# Secrets and local configuration
+brevo_settings.json
+.env
+.env.*
+*.db
+*.sqlite
+*.sqlite3
+
+# Local data and Python artifacts
+data/
+instance/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Editor / OS files
+.DS_Store
+Thumbs.db
